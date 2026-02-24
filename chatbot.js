@@ -23,7 +23,9 @@ function safeJsonParse(text) {
     return null;
   }
 }
-
+app.get("/", (req, res) => {
+  res.send("hello")
+})
 app.post("/chatbot", async (req, res) => {
   try {
     const { answers } = req.body;
