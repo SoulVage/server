@@ -1,7 +1,8 @@
+export const handler = serverless(app);
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import serverless from "serverless-http"; // اضافه می‌کنیم
+import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -177,5 +178,6 @@ Return **ONLY the JSON array**.
   }
 });
 
-// نکته مهم: به جای app.listen از serverless export استفاده می‌کنیم
-export const handler = serverless(app);
+
+// این خط **مهمه برای Vercel**
+export default serverless(app);
